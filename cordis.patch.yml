@@ -1,0 +1,4 @@
+# id: unique plugin entry id; name: must equal "name" in package.json.
+- insert:
+    - id: local-t3-bridge
+      name: local-t3-bridge

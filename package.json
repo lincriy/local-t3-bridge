@@ -1,0 +1,53 @@
+{
+  "name": "local-t3-bridge",
+  "version": "0.1.0",
+  "description": "DSH Go plugin that runs T3 Code (linux-arm64) inside DSH Go's container, bridges DSH Go over ACP with full native session history replay, and exposes DSH Go session tools for cross-device T3 Linked Environments.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0",
+    "node": ">=24"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dshGo": {
+    "v": 1,
+    "title": {
+      "zh": "T3 跨端互联",
+      "en": "T3 Bridge"
+    },
+    "icon": "cloud",
+    "contributes": {
+      "composer.tools": [
+        {
+          "id": "t3-bridge-entry",
+          "label": {
+            "zh": "T3 互联",
+            "en": "T3 Link"
+          },
+          "icon": "cloud",
+          "panel": "t3-bridge"
+        }
+      ],
+      "panels": [
+        {
+          "id": "t3-bridge",
+          "title": {
+            "zh": "T3 跨端互联",
+            "en": "T3 Bridge"
+          },
+          "icon": "cloud",
+          "placement": [
+            "session.tab",
+            "features",
+            "chat.panel"
+          ]
+        }
+      ]
+    }
+  }
+}
